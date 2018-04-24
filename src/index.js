@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 class Order extends React.Component {
 
   render() {
@@ -13,3 +16,15 @@ class Order extends React.Component {
     );
   }
 }
+
+Order.defaultProps = {
+  cone: true,
+  size: 'regular'
+};
+ 
+Order.propTypes = {
+  cone: PropTypes.bool,
+  size: PropTypes.string,
+  scoops: PropTypes.arrayOf(PropTypes.string).isRequired,
+  orderInfo: PropTypes.object.isRequired
+};
